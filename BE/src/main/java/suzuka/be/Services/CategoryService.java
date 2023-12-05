@@ -81,22 +81,33 @@ public class CategoryService {
         }
     }
 
-
     public boolean deleteCategory(Integer categoryId, Integer subCategoryId) {
-       try {
-           if (subCategoryId.equals(null)) {
-               Category category = categoryRepository.findById(categoryId).orElse(null);
-               categoryRepository.delete(category);
-               return true;
-           } else {
-               SubCategory subCategory = subCategoryRepository.findById(subCategoryId).orElse(null);
-               subCategoryRepository.delete(subCategory);
-               return true;
-           }
-       } catch (Exception e) {
-           return false;
-       }
-   }
+        try {
+            if (subCategoryId != null) {
+                SubCategory subCategory = subCategoryRepository.findById(subCategoryId).orElse(null);
+                if (subCategory != null) {
+                    subCategoryRepository.delete(subCategory);
+                }
+            } else {
+                Category category = categoryRepository.findById(categoryId).orElse(null);
+                if (category != null) {
+                    categoryRepository.delete(category);
+                }
+            }
+
+            if (categoryId != null) {
+                Category category = categoryRepository.findById(categoryId).orElse(null);
+                if (category != null && category.getSubCategories().isEmpty()) {
+                    categoryRepository.delete(category);
+                }
+            }
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 
     public static String slugify(String input) {
         String sanitized = input.replaceAll("&", "và").replaceAll("-", " và ");
