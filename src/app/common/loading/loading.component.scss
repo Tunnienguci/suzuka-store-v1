@@ -1,0 +1,23 @@
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .spinners {
+    width: 10rem;
+    height: 10rem;
+    animation: spin 1s ease-in-out infinite;
+    filter: invert(1) grayscale(100%) brightness(1000%);
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

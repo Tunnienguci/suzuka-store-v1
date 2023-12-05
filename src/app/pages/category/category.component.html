@@ -1,0 +1,29 @@
+<szk-loading [loading]="isLoading"></szk-loading>
+<div class="category">
+  <div class="head-tool d-flex align-items-center">
+    <h2 class="title text-uppercase fw-bold fs-3">Quản Lý Danh Mục</h2>
+    <button
+      class="btn ms-auto me-2"
+      data-bs-toggle="modal"
+      data-bs-target="#createCategory"
+    >
+      <i class="fa-solid fa-plus"></i>
+      Thêm Danh Mục
+    </button>
+  </div>
+  <small class="text-danger"
+    >Lưu ý rằng, khi thay đổi danh mục có thể sẽ xảy ra lỗi cho sản phẩm và toàn
+    bộ trang web</small
+  >
+
+  <div class="table-data">
+    <szk-tables
+      [thead]="categoryHeader"
+      [tbody]="categoryData"
+      (actionTable)="receiveEvent($event)"
+    ></szk-tables>
+  </div>
+</div>
+
+<!-- Modal -->
+<szk-modal [modalSetting]="categorySetting"></szk-modal>

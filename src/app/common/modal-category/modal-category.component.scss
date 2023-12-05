@@ -1,0 +1,22 @@
+.modal-footer {
+  padding: 1rem 0;
+  button:first-child {
+    border: var(--primary00) 1px solid;
+    color: var(--primary00);
+    background-color: transparent;
+  }
+
+  button:last-child {
+    border: var(--primary00) 1px solid;
+    color: #ffffff;
+    background-color: var(--primary00);
+  }
+}
+
+.form-group {
+  .btn {
+    border: var(--primary00) 1px solid;
+    color: #ffffff;
+    background-color: var(--primary00);
+  }
+}

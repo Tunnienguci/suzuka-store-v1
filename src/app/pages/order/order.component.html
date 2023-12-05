@@ -1,0 +1,25 @@
+<div class="order">
+  <div class="head-tool d-flex align-items-center">
+    <h2 class="title text-uppercase fw-bold fs-3">Quản Lý Đơn Hàng</h2>
+    <button
+      class="btn ms-auto me-2"
+      data-bs-toggle="modal"
+      data-bs-target="#createOrder"
+    >
+      <i class="fa-solid fa-plus"></i>
+      Mock Data
+    </button>
+    <button class="btn">
+      <i class="fa-solid fa-file-download"></i>
+      Xuất File
+    </button>
+  </div>
+
+  <small>Quản lý đơn hàng để đảm bảo đơn hàng được đầy đủ thông tin. </small>
+
+  <div class="table-data">
+    <szk-tables [thead]="orderHeader" [tbody]="orderData"></szk-tables>
+  </div>
+</div>
+
+<szk-modal [modalSetting]="orderSetting"></szk-modal>

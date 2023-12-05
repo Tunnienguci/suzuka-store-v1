@@ -1,0 +1,82 @@
+<div class="order-page">
+  <div class="head-tool d-flex align-items-center">
+    <h2 class="title text-uppercase fw-bold fs-3">Quản Lý Đơn Hàng</h2>
+    <div class="search-box ms-auto me-2 w-25">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="#{{ payload.id }}"
+        disabled
+      />
+    </div>
+  </div>
+  <hr />
+  <h4 class="title text-uppercase fw-bold text-dark-emphasis">
+    Thông Tin Khách Hàng
+  </h4>
+  <div class="information d-flex align-items-center gap-2 flex-wrap">
+    <div class="form-group w-50">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nguyễn Văn A"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="0123456789"
+        disabled
+      />
+    </div>
+    <div class="form-group w-25 ms-auto">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="vananguyen@gmail.com"
+        disabled
+      />
+    </div>
+    <div class="form-group w-50">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Địa Chỉ: 18 Nguyễn Văn Bà"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Quận: 7" disabled />
+    </div>
+    <div class="form-group w-25 ms-auto">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Tỉnh/Thành Phố: Hồ Chí Minh"
+        disabled
+      />
+    </div>
+    <div class="form-group w-100">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Note: Kẹp 03 hai em ấy đi ăn bún đậu Hàng Khay "
+        disabled
+      />
+    </div>
+  </div>
+  <hr />
+  <h4 class="title text-uppercase fw-bold text-dark-emphasis">Đơn Hàng</h4>
+  <div class="product-list"></div>
+</div>
+
+<div class="modal-footer border-0">
+  <button type="button" class="btn" data-bs-dismiss="modal">
+    {{ modalSettings.btnClose }}
+  </button>
+  <button type="button" class="btn">
+    {{ modalSettings.btnSave }}
+  </button>
+</div>

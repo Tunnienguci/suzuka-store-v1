@@ -1,0 +1,11 @@
+h2 + button {
+  background-color: var(--primary01);
+  color: #ffffff;
+  box-shadow: 0 0 1rem rgba(146, 146, 146, 0.8);
+}
+
+button + button {
+  border: transparent;
+  color: var(--primary01);
+  box-shadow: 0 0 1rem rgba(146, 146, 146, 0.8);
+}

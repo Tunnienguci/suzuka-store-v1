@@ -1,0 +1,93 @@
+<div class="sidebar">
+  <div class="logo">
+    <img src="assets/szk.png" alt="" />
+  </div>
+  <a
+    class="tabs"
+    [routerLink]="['']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <div class="icon-tab">
+      <i class="fa fa-dashboard"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Dashboard</h3>
+    </div>
+  </a>
+
+  <a class="tabs" [routerLink]="['home']" routerLinkActive="active">
+    <div class="icon-tab">
+      <i class="fa fa-home"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Trang Chủ</h3>
+    </div>
+  </a>
+
+  <a class="tabs" [routerLink]="['quan-ly-san-pham']" routerLinkActive="active">
+    <div class="icon-tab">
+      <i class="fa-solid fa-box-archive"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Quản Lý Sản Phẩm</h3>
+    </div>
+  </a>
+
+  <a class="tabs" [routerLink]="['quan-ly-danh-muc']" routerLinkActive="active">
+    <div class="icon-tab">
+      <i class="fa-solid fa-layer-group"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Quản Lý Danh Mục</h3>
+    </div>
+  </a>
+
+  <a class="tabs" [routerLink]="['quan-ly-don-hang']" routerLinkActive="active">
+    <div class="icon-tab">
+      <i class="fa-solid fa-file-lines"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Quản Lý Đơn Hàng</h3>
+    </div>
+  </a>
+
+  <a
+    class="tabs"
+    [routerLink]="['quan-ly-giao-dien']"
+    routerLinkActive="active"
+  >
+    <div class="icon-tab">
+      <i class="fa-brands fa-uikit"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Quản Lý Giao Diện</h3>
+    </div>
+  </a>
+
+  <a
+    class="tabs"
+    [routerLink]="['quan-ly-giao-dien']"
+    routerLinkActive="active"
+  >
+    <div class="icon-tab">
+      <i class="fa-solid fa-tags"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Quản Lý Khuyến Mãi</h3>
+    </div>
+  </a>
+
+  <a
+    class="tabs"
+    [routerLink]="['quan-ly-giao-dien']"
+    routerLinkActive="active"
+  >
+    <div class="icon-tab">
+      <i class="fa-regular fa-circle-user"></i>
+    </div>
+    <div class="text-tab">
+      <h3>Quản Lý Khách Hàng</h3>
+    </div>
+  </a>
+</div>

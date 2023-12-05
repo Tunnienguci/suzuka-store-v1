@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --primary00: #e6067f;
+  --primary01: #cf0a74;
+  --primary02: #b40d6b;
+  --light00: #f5e3f5;
+  --light01: #f0d1f0;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+}
+
+/* For Bootstrap 5 */
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: none;
+  border: transparent;
+}

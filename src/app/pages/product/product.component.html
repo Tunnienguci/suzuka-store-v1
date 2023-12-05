@@ -1,0 +1,26 @@
+<div class="product">
+  <div class="head-tool d-flex align-items-center">
+    <h2 class="title text-uppercase fw-bold fs-3">Quản Lý Sản Phẩm</h2>
+    <button
+      class="btn ms-auto me-2"
+      data-bs-toggle="modal"
+      data-bs-target="#createProduct"
+    >
+      <i class="fa-solid fa-plus"></i>
+      Thêm Sản Phẩm
+    </button>
+    <button class="btn">
+      <i class="fa-solid fa-file-download"></i>
+      Xuất File
+    </button>
+  </div>
+
+  <small>Quản lý sản phẩm để đảm bảo sản phẩm được đầy đủ thông tin. </small>
+
+  <div class="table-data">
+    <szk-tables [thead]="productHeader" [tbody]="productData"></szk-tables>
+  </div>
+</div>
+
+<!-- Modal -->
+<szk-modal [modalSetting]="productSetting"></szk-modal>

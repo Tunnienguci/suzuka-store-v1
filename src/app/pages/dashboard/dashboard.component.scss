@@ -1,0 +1,38 @@
+.dashboard {
+  .statistic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    .card__item {
+      flex: 1;
+      height: 5rem;
+      padding: 1rem;
+      box-shadow: 0 0 1rem rgba(146, 146, 146, 0.5);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--primary00);
+      color: #fff;
+      i {
+        font-size: 2rem;
+      }
+
+      span {
+        background-color: #fff;
+        color: var(--primary00);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin-left: 1rem;
+        font-weight: 600;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+  }
+}

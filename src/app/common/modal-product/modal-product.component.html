@@ -1,0 +1,186 @@
+<szk-loading [loading]="isLoading"></szk-loading>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <h6 class="fw-semibold mb-4">
+    Thông tin chung <span class="text-danger">*</span>
+  </h6>
+  <div class="row g-3 mb-3">
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Tên Sản Phẩm"
+        formControlName="product_name"
+      />
+    </div>
+    <div class="col-md-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Mã sản phẩm / SKU"
+        formControlName="sku"
+      />
+    </div>
+    <div class="col-md-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Barcode"
+        formControlName="barcode"
+      />
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-md-4">
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Giá Bán Lẻ"
+        formControlName="price"
+      />
+    </div>
+    <div class="col-md-4">
+      <select
+        class="form-select"
+        formControlName="category"
+        (change)="updateSubCategories($event)"
+      >
+        <option value="">Loại Sản Phẩm</option>
+        <option *ngFor="let category of categories" [value]="category.id">
+          {{ category.categoryName }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" formControlName="sub_category">
+        <option value="">Loại Sản Phẩm Phụ</option>
+        <option
+          *ngFor="let subCategory of subCategories"
+          [value]="subCategory.subCategoryId"
+        >
+          {{ subCategory.subCategoryName }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <h6 class="fw-semibold">Mô Tả Sản Phẩm</h6>
+    <ckeditor
+      [editor]="Editor"
+      data=""
+      (ready)="onReady($event)"
+      (change)="onChange($event)"
+    >
+    </ckeditor>
+  </div>
+
+  <h6 class="fw-semibold mb-3">Chương Trình Khuyến Mãi</h6>
+  <div class="row g-3 mb-3">
+    <div class="col-md-4">
+      <input
+        type="number"
+        class="form-control"
+        placeholder="% Giảm giá"
+        formControlName="discount"
+      />
+    </div>
+    <div class="col-md-4">
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Ngày Bắt Đầu"
+        formControlName="start_date"
+      />
+    </div>
+    <div class="col-md-4">
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Ngày Kết Thúc"
+        formControlName="end_date"
+      />
+    </div>
+  </div>
+
+  <h6 class="fw-semibold mb-3">
+    Thông Tin Khác <span class="text-danger">*</span>
+  </h6>
+  <div class="row g-3 mb-3">
+    <div class="col-md-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nhà Cung Cấp"
+        formControlName="provider"
+      />
+    </div>
+    <div class="col-md-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nhà Sản Xuất"
+        formControlName="brand"
+      />
+    </div>
+    <div class="col-md-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Còn Hàng / Hết Hàng"
+        formControlName="made_in"
+      />
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <h6 class="fw-semibold">
+      Ảnh Đại Diện Sản Phẩm <span class="text-danger">*</span>
+    </h6>
+    <label for="avatar" class="btn-avatar">
+      <i class="fa-solid fa-plus"></i> Thêm Ảnh Đại Diện
+    </label>
+    <input
+      type="file"
+      id="avatar"
+      class="form-control d-none"
+      (change)="onFileChangeAvatar($event)"
+    />
+    <!-- Product Image Upload Logic -->
+  </div>
+
+  <div class="mb-4">
+    <h6 class="fw-semibold">Album Ảnh <span class="text-danger">*</span></h6>
+    <!-- Album Image Upload Logic -->
+    <label for="images" class="btn-outline-avatar">
+      <i class="fa-solid fa-plus"></i> Thêm Album Ảnh
+    </label>
+    <input
+      type="file"
+      id="images"
+      name="images"
+      class="d-none"
+      (change)="onFileChange($event)"
+      multiple
+    />
+  </div>
+
+  <div class="preview-img mb-4">
+    <div class="avatar" *ngIf="avatar !== ''">
+      <!-- Thêm ảnh avatar tại đây -->
+      <img [src]="avatar" alt="Avatar" loading="lazy" class="main-img" />
+    </div>
+    <div class="album" *ngIf="imageList.length > 0">
+      <img [src]="item" alt="Product" *ngFor="let item of imageList" />
+    </div>
+  </div>
+
+  <div class="modal-footer border-0">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      {{ modalSettings.btnClose }}
+    </button>
+    <button type="submit" class="btn btn-primary">
+      {{ modalSettings.btnSave }}
+    </button>
+  </div>
+</form>

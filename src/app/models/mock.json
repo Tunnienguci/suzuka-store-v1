@@ -1,0 +1,44 @@
+[
+    {
+        "sku": "SP0005",
+        "barcode": "SP0005",
+        "product_name": "Sweater",
+        "description": "Sweater",
+        "price": 100,
+        "discount": 0,
+        "start_date": "2020-01-01",
+        "end_date": "2020-12-31",
+        "status": "active",
+        "provider": "provider1",
+        "brand": "brand1",
+        "category": "category1",
+        "sub_category": "sub_category1",
+        "made_in": "made_in1",
+        "images":[]    
+    },
+
+    {
+        "information": "User",
+        "order":[
+            {
+                "product_name": "Sweater",
+                "sku": "SP0005",
+                "quantity": 1
+            },
+            {
+                "product_name": "Sweater",
+                "sku": "SP0005",
+                "quantity": 1
+            },
+            {
+                "product_name": "Sweater",
+                "sku": "SP0005",
+                "quantity": 1
+            }
+        ],
+        "total": 300,
+        "discount": 0,
+        "created_at": "2020-01-01",
+        "updated_at": "2020-01-01"
+    }
+]

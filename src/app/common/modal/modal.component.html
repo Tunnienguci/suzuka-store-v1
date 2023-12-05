@@ -1,0 +1,43 @@
+<div
+  class="modal fade"
+  id="{{ modalSetting.modalName }}"
+  tabindex="-1"
+  aria-hidden="true"
+  aria-labelledby=""
+>
+  <div class="modal-dialog" ngClass="modal-{{ modalSetting.size }}">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5" id="{{ modalSetting.modalName }}">
+          {{ modalSetting.modalTitle }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <ng-container *ngIf="modalSetting.type == 'product'">
+          <szk-modal-product
+            [payload]="modalSetting.data"
+            [modalSettings]="modalSetting"
+          ></szk-modal-product>
+        </ng-container>
+        <ng-container *ngIf="modalSetting.type == 'category'">
+          <szk-modal-category
+            [payload]="modalSetting.data"
+            [modalSettings]="modalSetting"
+          ></szk-modal-category>
+        </ng-container>
+        <ng-container *ngIf="modalSetting.type == 'order'">
+          <szk-modal-order
+            [payload]="modalSetting.data"
+            [modalSettings]="modalSetting"
+          ></szk-modal-order>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

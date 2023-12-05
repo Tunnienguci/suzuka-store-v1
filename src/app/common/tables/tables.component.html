@@ -1,0 +1,38 @@
+<div class="tables">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let th of thead" class="text-center">{{ th.label }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let td of tbody">
+        <td *ngFor="let th of thead">
+          <div class="text-center" *ngIf="th.type === 'checkbox'">
+            <input type="checkbox" />
+          </div>
+          <div class="text-center" *ngIf="th.type === 'text'">
+            {{ td[th.key] }}
+          </div>
+          <div class="text-center" *ngIf="th.type === 'price'">
+            {{ td[th.key] | currency : "VND" : "symbol" : "1.0-0" }}
+          </div>
+          <div class="text-center" *ngIf="th.type === 'discount'">
+            {{ td[th.key] + "%" }}
+          </div>
+          <div class="text-center" *ngIf="th.type === 'image'">
+            <img [src]="td[th.key]" class="avatar" />
+          </div>
+          <div class="text-center" *ngIf="th.type === 'button'">
+            <button
+              class="btn btn-function"
+              (click)="btnFunction($event, td, th.label)"
+            >
+              {{ th.label }}
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

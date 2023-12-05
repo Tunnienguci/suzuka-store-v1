@@ -1,0 +1,18 @@
+.main {
+  .sidebar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 99;
+    box-shadow: 0 0 1rem rgba(146, 146, 146, 0.5);
+    border-radius: 10px;
+  }
+
+  .content-main {
+    margin-left: 4rem;
+    padding: 1rem 2rem;
+    width: calc(100% - 4rem);
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
