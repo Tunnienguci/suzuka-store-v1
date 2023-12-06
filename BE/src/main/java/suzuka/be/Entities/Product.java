@@ -46,7 +46,7 @@ public class Product {
     private String brand;
 
     @Column(name = "origin")
-    private String origin;
+    private String stock;
 
     @Column(name = "avatar")
     private String avatar;

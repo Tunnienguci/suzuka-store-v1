@@ -18,7 +18,6 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
-    private final SubCategoryRepository subCategoryRepository;
     private final ImageRepository imageRepository;
 
     public List<Product> getProductAll(){
@@ -55,7 +54,7 @@ public class ProductService {
         product.setSubCategory(request.getSub_category_id());
         product.setAvatar(request.getAvatar().trim());
         product.setBrand(request.getBrand().trim());
-        product.setOrigin(request.getOrigin().trim());
+        product.setStock(request.getOrigin().trim());
 
         productRepository.save(product);
 
